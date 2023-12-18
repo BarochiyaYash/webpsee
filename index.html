@@ -1,0 +1,765 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Web Programing PSEE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="830998aa-3650-4726-915d-f81440c44592" class="page sans"><header><h1 class="page-title">Web Programing</h1><p class="page-description"></p></header><div class="page-body"><p id="bed5b7e2-0db3-4842-ae34-f4b35ca47f0c" class="">
+</p><p id="1e31cbc2-4dfc-4570-a6f8-4b82bb5518ce" class="">
+</p><div id="6c73b62c-7344-4cca-9678-06ff58ec3ce9" class="column-list"><div id="9495618c-9c5c-40ea-8771-72663583daf0" style="width:33.333333333333336%" class="column"><p id="6dba70a3-253f-48a3-bcf0-6e2656fd80b5" class=""><strong>Question: Full Form of WWW</strong></p><ul id="5e14380b-4800-4120-91e0-67f20410b5bc" class="bulleted-list"><li style="list-style-type:disc">Answer: World Wide Web</li></ul></div><div id="4bcd38e9-164c-46e5-b914-602f5cfc2d1c" style="width:33.333333333333336%" class="column"><p id="3ea2fbbd-f146-45a2-bd75-84187cf35f33" class=""><strong>Question: Full Form of URL</strong></p><ul id="49893db4-344e-40b3-919e-11aa4d7643c1" class="bulleted-list"><li style="list-style-type:disc">Answer: Uniform Resource Locator</li></ul></div><div id="bc6c3196-1cbf-4828-8593-e20371a24de3" style="width:33.33333333333333%" class="column"><p id="8201a878-7953-4bfd-bcb6-6c8f13a333f8" class=""><strong>Question: Full Form of SMTP</strong></p><ul id="6bba4821-a3bf-4903-86de-fcec3fc00310" class="bulleted-list"><li style="list-style-type:disc">Answer: Simple Mail Transfer Protocol</li></ul></div></div><div id="3ecf33eb-7619-4e62-9b19-d64c9884928b" class="column-list"><div id="a94c9669-7112-4fb4-bd68-d61eeb1ae08d" style="width:33.333333333333336%" class="column"><p id="9f98df12-f6d1-419b-ae88-4042084926b7" class=""><strong>Question: Full Form of POP3</strong><div class="indented"><ul id="ee7fd86c-d99a-4f1f-ad9f-bf3426894d4b" class="bulleted-list"><li style="list-style-type:disc">Answer: Post Office Protocol 3</li></ul></div></p></div><div id="74679e0a-0cd1-4e32-9069-358abb393709" style="width:33.333333333333336%" class="column"><p id="b367aedb-fa39-4a0c-9931-cd227d08d1dd" class=""><strong>Question: Full Form of FTP</strong><div class="indented"><ul id="eb275394-4549-40d6-90e3-29fe2453a4c8" class="bulleted-list"><li style="list-style-type:disc">Answer: File Transfer Protocol</li></ul></div></p></div><div id="893f0dc7-3826-43f1-bc63-d358113d741c" style="width:33.33333333333333%" class="column"><p id="67bccc40-90c6-4b23-b88e-29d563f80b08" class=""><strong>Question: Full Form of HTML</strong><div class="indented"><ul id="8a029261-e421-4ae3-8806-5c9749fefe9f" class="bulleted-list"><li style="list-style-type:disc">Answer: Hypertext Markup Language</li></ul></div></p></div></div><div id="39872be0-9699-45c5-8c96-085d5876a257" class="column-list"><div id="3f00a890-da73-41ee-a8bc-8f09287e923d" style="width:33.333333333333336%" class="column"><p id="5e60dc2b-91e6-48bf-b4cf-e8721c509bd2" class=""><strong>Question: Full Form of CSS</strong><div class="indented"><ul id="bf5fd1d7-d98a-4eb0-ae29-6e8516ca8348" class="bulleted-list"><li style="list-style-type:disc">Answer: Cascading Style Sheets</li></ul></div></p></div><div id="b0516d68-b701-41d6-b716-759613ef8539" style="width:33.333333333333336%" class="column"><p id="05fa5980-6aef-412c-a717-176ad1decd23" class=""><strong>Question: Full Form of JS</strong><div class="indented"><ul id="56240f61-d146-4839-a215-2fc3af6d7f7a" class="bulleted-list"><li style="list-style-type:disc">Answer: JavaScript</li></ul></div></p></div><div id="2736467c-ee57-4f16-ae8f-f8075630eda9" style="width:33.33333333333333%" class="column"><p id="1bbef77d-5c6d-4348-867b-e3a217bb9ce3" class=""><strong>Question: Full Form of PHP</strong><div class="indented"><ul id="3e99d84e-e2a4-4e7a-a6f1-439d705a87fd" class="bulleted-list"><li style="list-style-type:disc">Answer: Hypertext Preprocessor</li></ul></div></p></div></div><div id="41c4f69d-fd51-4cb1-bd6b-ffa77d1d1920" class="column-list"><div id="3728e868-77c0-4d02-ba22-67a9f6af4ee5" style="width:33.333333333333336%" class="column"><p id="f5340b65-9642-43db-bd0f-70a7dbeba9f2" class=""><strong>Question: Full Form of API</strong><div class="indented"><ul id="4ffa8584-ff3e-42ff-b734-ae08c085d4f2" class="bulleted-list"><li style="list-style-type:disc">Answer: Application Programming Interface</li></ul></div></p></div><div id="66547d8b-a6b8-4cde-ad3f-2a891699006f" style="width:33.333333333333336%" class="column"><p id="2cf31a02-3e63-404a-bf01-8b63b7550751" class=""><strong>Question: Full Form of RWD</strong><div class="indented"><ul id="70849836-5533-43c7-b505-5d816699097f" class="bulleted-list"><li style="list-style-type:disc">Answer: Responsive Web Design</li></ul></div></p></div><div id="8731a6d5-0c57-4174-8cae-a262f993d008" style="width:33.33333333333333%" class="column"><p id="0ea9c34a-10af-4438-803f-12775053f515" class=""><strong>Question: Full Form of CMS</strong><div class="indented"><ul id="c68ca31f-3e12-4ab0-a341-9156621a0d22" class="bulleted-list"><li style="list-style-type:disc">Answer: Content Management System</li></ul></div></p></div></div><div id="06ed00ce-8e6d-4bd9-8173-d3f07b0c94a9" class="column-list"><div id="5c30865a-5c58-472e-a0d4-8251d957f630" style="width:33.333333333333336%" class="column"><p id="85342d3a-f55d-4b7a-ae24-d71f60aba273" class=""><strong>Question: Full Form of SQL</strong><div class="indented"><ul id="d88a2efc-085e-471b-a198-9105241a154c" class="bulleted-list"><li style="list-style-type:disc">Answer: Structured Query Language</li></ul></div></p></div><div id="0c002a17-6ed3-4605-9172-c2be3e448a1a" style="width:33.333333333333336%" class="column"><p id="70e929db-d6cd-4ce0-86b2-ae9881c753bb" class=""><strong>Question: Full Form of AJAX</strong><div class="indented"><ul id="79f70870-04ce-4061-95bf-6cc58f3184d8" class="bulleted-list"><li style="list-style-type:disc">Answer: Asynchronous JavaScript and XML</li></ul></div></p></div><div id="c1e3d92a-5def-4fb9-8de4-99c277d7f517" style="width:33.33333333333333%" class="column"><p id="4bdcc265-b0f1-401c-9fdc-de416f0c92c0" class=""><strong>Question: Full Form of JSON</strong><div class="indented"><ul id="d6a8fcdb-c6fa-48bd-8dc9-74aed5c2e827" class="bulleted-list"><li style="list-style-type:disc">Answer: JavaScript Object Notation</li></ul></div></p></div></div><div id="86b4257e-932c-40b1-8517-0018d59a7dab" class="column-list"><div id="c1ddc54d-ba18-4a1f-8564-1815ecc152e9" style="width:33.333333333333336%" class="column"><p id="d3118e41-a62e-4d6c-a63b-202bab13c6b7" class=""><strong>Question: Full Form of HTTPS</strong><div class="indented"><ul id="9a49f48c-3ef8-46d9-a7d0-96bbe0164c3f" class="bulleted-list"><li style="list-style-type:disc">Answer: Hypertext Transfer Protocol Secure</li></ul></div></p></div><div id="399eff1f-53f1-494a-9385-6a8f8d80fc2f" style="width:33.333333333333336%" class="column"><p id="e94b6f42-2205-4278-9a74-188b7fc55ad8" class=""><strong>Question: Full Form of DNS</strong><div class="indented"><ul id="2c802bc7-15ca-4e78-829d-7b8698212857" class="bulleted-list"><li style="list-style-type:disc">Answer: Domain Name System</li></ul></div></p></div><div id="297ca171-704f-425f-9bb2-e293e02b04fd" style="width:33.33333333333333%" class="column"><p id="6c832302-2f4c-4235-a92c-03ec1469234f" class=""><strong>Question: Full Form of IP</strong><div class="indented"><ul id="10c15eab-5e89-4eba-ad60-2b3a55da2bc0" class="bulleted-list"><li style="list-style-type:disc">Answer: Internet Protocol</li></ul></div></p></div></div><div id="43053549-799d-4572-9552-060e9b4379d1" class="column-list"><div id="e10c94fe-eb3a-4778-b21a-3cf77b993250" style="width:33.333333333333336%" class="column"><p id="ee3bdd9a-e496-4707-a6e5-389f15ca0b70" class=""><strong>Question: Full Form of SEO</strong><div class="indented"><ul id="ddc3fd4f-f623-4839-a8cf-9b9a57fe9d94" class="bulleted-list"><li style="list-style-type:disc">Answer: Search Engine Optimization</li></ul></div></p></div><div id="3edc3c6e-9a3a-42c9-9112-f1eaa4051f23" style="width:33.333333333333336%" class="column"><p id="6e522296-9606-4fe4-8162-1969a841c696" class=""><strong>Question: Full Form of SSL</strong><div class="indented"><ul id="efd95f60-cfac-4075-9604-ceeedb08e082" class="bulleted-list"><li style="list-style-type:disc">Answer: Secure Sockets Layer</li></ul></div></p></div><div id="cf3aed8f-23e6-4488-bbb9-a5f81afdf8af" style="width:33.33333333333333%" class="column"><p id="e6575a0f-136c-4439-9e61-476032b95b45" class=""><strong>Question: Full Form of CDN</strong></p><ul id="c8f8ab56-0b7f-403a-8dbe-0c96fd215599" class="bulleted-list"><li style="list-style-type:disc">Answer: Content Delivery Network</li></ul></div></div><p id="5c8fad87-08ee-4988-bd6b-7632d7b057c3" class="">
+</p><hr id="a6c38932-d7ea-4395-939c-ada6214fd2e5"/><p id="c48a01fd-2323-4618-b194-82149d11ad8a" class="">
+</p><ol type="1" id="a443e4d8-8ad4-4641-af28-73f2bd6451ee" class="numbered-list" start="1"><li><strong>Question: What does WWW stand for, and what is its significance in the context of the internet?</strong><ul id="88dfdb67-b180-4997-a695-9da03f25af71" class="bulleted-list"><li style="list-style-type:disc">Answer: WWW stands for World Wide Web. It&#x27;s a system of interlinked hypertext documents accessed via the internet.</li></ul><p id="8a2c2c43-a01b-4e8e-9e1f-372ac1ff5777" class="">
+</p></li></ol><ol type="1" id="26a21d7c-cb65-47e3-af97-d48710ae3252" class="numbered-list" start="2"><li><strong>Question: Explain the basic architecture of the World Wide Web.</strong><ul id="435a93a3-48b1-4494-808c-c47b4c4839ac" class="bulleted-list"><li style="list-style-type:disc">Answer: The WWW architecture consists of clients (browsers), servers, and the internet. Clients request web pages, servers deliver content, and the internet connects them.</li></ul><p id="cc26717f-0848-4cfb-86d3-46f46a7bfff5" class="">
+</p></li></ol><ol type="1" id="b3ec2467-29a8-4c73-838c-01fbf3a20e11" class="numbered-list" start="3"><li><strong>Question: What is a URL, and how is it structured?</strong><ul id="b9902a3d-1e45-4e88-97aa-c700c7e6ed89" class="bulleted-list"><li style="list-style-type:disc">Answer: URL (Uniform Resource Locator) is a web address. It comprises a protocol (e.g., http), domain name, and path to the resource.</li></ul><p id="1c72561e-49de-49c1-8bd5-627d7eda4ea2" class="">
+</p></li></ol><ol type="1" id="583a871d-c76e-404a-86bb-40c6a11a8d75" class="numbered-list" start="4"><li><strong>Question: Differentiate between SMTP and POP3 in the context of email communication.</strong><ul id="9441c855-1e46-4171-809d-148be1853ab1" class="bulleted-list"><li style="list-style-type:disc">Answer: SMTP (Simple Mail Transfer Protocol) sends emails, while POP3 (Post Office Protocol) retrieves them from a server to a client.</li></ul><p id="4c9ecb77-46fe-4f77-9996-db854aa9ffde" class="">
+</p></li></ol><ol type="1" id="ba21d281-289a-4959-8e64-aefde326b02d" class="numbered-list" start="5"><li><strong>Question: What is FTP, and how is it used in the context of file transfer?</strong><ul id="04d157a4-14fe-48a4-a731-89724853e08a" class="bulleted-list"><li style="list-style-type:disc">Answer: FTP (File Transfer Protocol) is used for transferring files between a client and server on a network.</li></ul><p id="d0a14d7b-9c10-4d5e-837a-db47fcd24ccc" class="">
+</p></li></ol><ol type="1" id="92b60e73-d44e-4ab1-ba55-50fff71005ba" class="numbered-list" start="6"><li><strong>Question: Provide an overview of HTTP (Hypertext Transfer Protocol).</strong><ul id="e126e6aa-3e09-4d69-ab41-1b791af02805" class="bulleted-list"><li style="list-style-type:disc">Answer: HTTP is a protocol for transferring hypertext requests and information between a web client and server.</li></ul><p id="34104751-a459-44f4-8a97-c8a73bd2c561" class="">
+</p></li></ol><ol type="1" id="d0aa9624-d42b-400d-b380-72763eac0716" class="numbered-list" start="7"><li><strong>Question: Explain the components of an HTTP request.</strong><ul id="52471c6d-e1da-4c42-b096-0663328022b1" class="bulleted-list"><li style="list-style-type:disc">Answer: An HTTP request consists of a method (GET, POST), URL, headers, and an optional message body.</li></ul><p id="e20d386c-d8b7-4d30-a8b2-1199ff4a56d7" class="">
+</p></li></ol><ol type="1" id="af85c9e8-1b58-4021-8c4b-11158f82f454" class="numbered-list" start="8"><li><strong>Question: What is the purpose of an HTTP response?</strong><ul id="31c2695e-6bd3-40c6-8677-bd426624e32e" class="bulleted-list"><li style="list-style-type:disc">Answer: An HTTP response is sent by the server to fulfill a client&#x27;s request, containing status information and possibly data.</li></ul><p id="d398a52a-2b0e-4976-ab0a-dffd4a4f5cfc" class="">
+</p></li></ol><ol type="1" id="fafa7454-de96-4e07-aa2d-d09a977f83d8" class="numbered-list" start="9"><li><strong>Question: Distinguish between static and dynamic web pages.</strong><ul id="9ec47677-8edc-4a7e-b439-9f33ada80b4b" class="bulleted-list"><li style="list-style-type:disc">Answer: Static pages have fixed content, while dynamic pages generate content on-the-fly based on user interactions or data inputs.</li></ul><p id="f1b65ab6-89da-4fe9-988d-33fc9a5b3ca2" class="">
+</p></li></ol><ol type="1" id="78cca963-4ce0-4d7c-b529-0ecbf676857a" class="numbered-list" start="10"><li><strong>Question: How does a browser handle a URL when a user enters it in the address bar?</strong></li></ol><ul id="4bcbef59-c1f9-475b-aa66-007bdff5a488" class="bulleted-list"><li style="list-style-type:disc">Answer: The browser initiates an HTTP request to the server specified in the URL, which then sends back the requested web page.</li></ul><p id="4022283f-8d15-4661-971e-a063d9ebb95e" class="">
+</p><ol type="1" id="11a67579-fa0f-43f6-9e3d-88705bd12e40" class="numbered-list" start="11"><li><strong>Question: What role do cookies play in web applications?</strong><ul id="63fd199e-5f5a-4cfe-9975-7595c18fa86e" class="bulleted-list"><li style="list-style-type:disc">Answer: Cookies are small pieces of data stored on a user&#x27;s device, often used to track user activity and maintain session information.</li></ul><p id="fd08d982-c908-416c-a982-d36bc478d331" class="">
+</p></li></ol><ol type="1" id="03636716-4b81-4bd3-a477-7f9af3e2e949" class="numbered-list" start="12"><li><strong>Question: Explain the significance of status codes in HTTP responses.</strong><ul id="1e135082-547f-460f-a772-76dd4e9b6c2a" class="bulleted-list"><li style="list-style-type:disc">Answer: Status codes indicate the success or failure of an HTTP request. For example, 200 OK signifies success, while 404 Not Found indicates an error.</li></ul><p id="1149f4b0-9933-4b00-8850-205bb3d9ad01" class="">
+</p></li></ol><ol type="1" id="da640eee-06c8-407e-bd3d-271f10adc968" class="numbered-list" start="13"><li><strong>Question: How does HTTP secure communication through HTTPS?</strong><ul id="99a19fe9-99b3-460d-babc-94917810e0d0" class="bulleted-list"><li style="list-style-type:disc">Answer: HTTPS (Hypertext Transfer Protocol Secure) uses encryption (SSL/TLS) to secure data transmitted between the client and server.</li></ul><p id="d8d37e73-8f73-497b-b709-d8a621c259bf" class="">
+</p></li></ol><ol type="1" id="f0759d42-c63e-4bb2-9b71-84fcdf7750ae" class="numbered-list" start="14"><li><strong>Question: Describe the role of a web server in the WWW architecture.</strong><ul id="3a10e718-023f-4116-83b3-f89ca1f1a241" class="bulleted-list"><li style="list-style-type:disc">Answer: A web server stores and serves web content in response to client requests, facilitating the exchange of information on the internet.</li></ul><p id="99bc12df-706c-49cf-8014-945277b574a1" class="">
+</p></li></ol><ol type="1" id="7cec4fd0-4fe7-444d-a618-dc3328dd6b01" class="numbered-list" start="15"><li><strong>Question: What is the purpose of the HTTP method &quot;POST,&quot; and when is it commonly used?</strong><ul id="4c9bb322-4a52-47dc-94ba-44656d1607fd" class="bulleted-list"><li style="list-style-type:disc">Answer: The POST method is used to submit data to be processed to a specified resource. It is commonly used in forms and for data submission in web applications.</li></ul><p id="d5933924-5ea4-4bf3-a7ac-9cfefcbd9d6e" class="">
+</p><hr id="8b1f3f22-2cbf-4dcf-a1ce-8a2bee4e878d"/><p id="3da412b2-cf37-42d1-8b5b-acad6f5568a2" class="">
+</p></li></ol><ol type="1" id="eb4095d9-1d49-474e-acf3-c88fe4230ce2" class="numbered-list" start="16"><li><strong>Question: What is HTML5, and how does it differ from its predecessors?</strong><ul id="b71b3de1-7d72-43f0-b1d7-7769ee1f8ec6" class="bulleted-list"><li style="list-style-type:disc">Answer: HTML5 is the latest version of HTML, introducing new features for structuring content, multimedia, and improved compatibility.</li></ul><p id="b36eb1db-fd04-40f7-9330-c9301616f31d" class="">
+</p></li></ol><ol type="1" id="9bd99242-04bf-446f-a4b6-e5a2e3e38593" class="numbered-list" start="17"><li><strong>Question: Name some key features of HTML5.</strong><ul id="2bdfa6ea-e537-43b3-8a0d-7aae1e14f4d8" class="bulleted-list"><li style="list-style-type:disc">Answer: Features include semantic tags, new input elements, media tags (audio and video), Canvas API for graphics, drag and drop, and Geolocation API.</li></ul><p id="34530150-a904-47e7-92b9-f5fe00fe4515" class="">
+</p></li></ol><ol type="1" id="1bb4de57-b763-4c2f-8bf8-24e8d74495a1" class="numbered-list" start="18"><li><strong>Question: Explain the purpose of semantic tags in HTML5.</strong><ul id="7de78bc6-c16a-4d7f-b627-6ec1f173f392" class="bulleted-list"><li style="list-style-type:disc">Answer: Semantic tags in HTML5 provide meaning to the structure of a web page, improving accessibility and search engine optimization.</li></ul><p id="aa7bf807-b5b3-41f1-a2c4-a1a50a04fd8d" class="">
+</p></li></ol><ol type="1" id="7ad39c05-a1fa-4fb2-9e1f-04a03bd36e97" class="numbered-list" start="19"><li><strong>Question: What are the new input elements introduced in HTML5?</strong><ul id="f6602a07-e6a8-487f-a81f-e81ab8cdb6f6" class="bulleted-list"><li style="list-style-type:disc">Answer: HTML5 introduces input types such as date, email, color, and range, offering improved user interaction and validation.</li></ul><p id="613e848f-2a58-404f-8ea1-0831c9cf5f67" class="">
+</p></li></ol><ol type="1" id="e614e6cc-b805-430e-b3be-5a5354aac54e" class="numbered-list" start="20"><li><strong>Question: How do media tags like Audio and Video enhance HTML5?</strong><ul id="bda1fcae-477d-446c-9935-0b40a6fe46c7" class="bulleted-list"><li style="list-style-type:disc">Answer: Media tags allow seamless integration of audio and video content into web pages without requiring third-party plugins.</li></ul><p id="9f4987ca-a7d7-4301-834f-6c09605a13d3" class="">
+</p></li></ol><ol type="1" id="e7675f46-0035-439d-9ea1-35ecb6ef39cb" class="numbered-list" start="21"><li><strong>Question: How does the Canvas API contribute to designing graphics in HTML5?</strong><ul id="06c96e6d-d0ba-454e-9986-be0f9bfcb741" class="bulleted-list"><li style="list-style-type:disc">Answer: The Canvas API provides a drawing surface for graphics, allowing dynamic rendering of shapes, images, and other visual elements.</li></ul><p id="23154f9c-c3d6-4e1a-970b-434f988f49f7" class="">
+</p></li></ol><ol type="1" id="e0eb749e-57c9-4ea2-84b8-44fcad024636" class="numbered-list" start="22"><li><strong>Question: What is the significance of the Drag and Drop feature in HTML5?</strong><ul id="e9fd8ee8-d296-4507-b4f9-bd95dd07ff9a" class="bulleted-list"><li style="list-style-type:disc">Answer: Drag and Drop simplifies user interactions, enabling users to move elements within a web page effortlessly.</li></ul><p id="3eb0d7c2-037e-4a79-ae3f-898d65bae589" class="">
+</p></li></ol><ol type="1" id="4d581882-c40b-4ca0-9cec-458aec1cd093" class="numbered-list" start="23"><li><strong>Question: Explain the purpose and usage of the Geolocation API in HTML5.</strong><ul id="3c6e4198-e7a3-475a-8495-07e9a5c03eed" class="bulleted-list"><li style="list-style-type:disc">Answer: The Geolocation API allows web applications to access a user&#x27;s geographical location, enabling location-based services.</li></ul><p id="441e77fa-fa58-4315-8d32-cf70969c2a04" class="">
+</p></li></ol><ol type="1" id="3e4c8703-e0a4-435f-b3eb-831a00f3e110" class="numbered-list" start="24"><li><strong>Question: What is a stylesheet, and how does it contribute to web design?</strong><ul id="e313b166-07a6-43f3-80f5-5b4989d8dd97" class="bulleted-list"><li style="list-style-type:disc">Answer: A stylesheet, such as CSS, controls the presentation and layout of HTML documents, enhancing the visual appearance of web pages.</li></ul><p id="8a860d98-5f7d-4e16-ad24-2f0a9fe7bc6d" class="">
+</p></li></ol><ol type="1" id="b9e9860f-5624-4393-af98-4d1623e7efc3" class="numbered-list" start="25"><li><strong>Question: Differentiate between Class and ID concepts in CSS.</strong><ul id="ec6c36a0-601b-4182-8dfe-f1472010c178" class="bulleted-list"><li style="list-style-type:disc">Answer: Classes and IDs are selectors in CSS. Classes can be used by multiple elements, while IDs are unique to a single element.</li></ul><p id="e43c1793-53a9-49c9-9658-6baa972913bc" class="">
+</p></li></ol><ol type="1" id="7234d17b-1f31-43e5-bcc0-31eec1206d28" class="numbered-list" start="26"><li><strong>Question: Name some common CSS properties and their purposes.</strong><ul id="77e47cbc-682f-42b2-9fd8-c0d581264348" class="bulleted-list"><li style="list-style-type:disc">Answer: Properties like color, font-size, margin, and padding control visual aspects like text color, size, and spacing.</li></ul><p id="8a5a7868-59b6-48d1-b33f-3bb9ffef90b7" class="">
+</p></li></ol><ol type="1" id="68fdef8d-ded4-4ea7-9991-1b647dc18173" class="numbered-list" start="27"><li><strong>Question: What are some features introduced in CSS3 for enhanced styling?</strong><ul id="2f978c1a-acbf-4e12-aae2-a2c5ab089062" class="bulleted-list"><li style="list-style-type:disc">Answer: CSS3 features include Border Radius, Box Shadow, Image Border, Custom Web Font, Backgrounds, 2D and 3D Transformations.</li></ul><p id="fc70f3cd-ffd1-4a5c-8e27-37b68340ea01" class="">
+</p></li></ol><ol type="1" id="eafb9ec9-52fa-4c4e-b097-b3a36860a100" class="numbered-list" start="28"><li><strong>Question: How is the Border Radius property implemented in CSS3?</strong><ul id="c5cf7231-095b-44a7-a35d-5027bce027f7" class="bulleted-list"><li style="list-style-type:disc">Answer: Border Radius creates rounded corners for elements, enhancing the design aesthetics of web pages.</li></ul><p id="2d068fd7-b821-4a57-8647-004138a608b5" class="">
+</p></li></ol><ol type="1" id="b19069e6-9108-4ce7-a6f7-2bf6c6dffc44" class="numbered-list" start="29"><li><strong>Question: Briefly explain the concept of CSS Transitions.</strong><ul id="fe2194cb-078c-40c6-b1db-26de8a626e56" class="bulleted-list"><li style="list-style-type:disc">Answer: CSS Transitions allow smooth animations when a property value changes, providing a polished user experience.</li></ul><p id="72bc8f85-f757-4ec0-92c0-c0388d93f0b8" class="">
+</p></li></ol><ol type="1" id="9dd85c7c-bc3c-4472-bd2b-a47d6cd2e696" class="numbered-list" start="30"><li><strong>Question: How can animations be applied to text and elements using CSS?</strong><ul id="11d17b2a-a9d8-4a39-8362-fb8325ef9ed0" class="bulleted-list"><li style="list-style-type:disc">Answer: CSS Animations enable the gradual change of style properties over time, adding dynamic effects to text and elements on a webpage.</li></ul></li></ol><p id="8f43dc8f-4937-4759-ae92-1bb8ba593e2b" class="">
+</p><hr id="700f15cf-51f3-4bcc-bdb8-d5dc250759c6"/><p id="e0d904b9-e8d1-4d21-b905-35fb4b014616" class="">
+</p><ol type="1" id="a90728bd-9bb2-413a-8466-d7be3461d57d" class="numbered-list" start="31"><li><strong>Question: What is Responsive Web Design (RWD)?</strong><ul id="c0b702f4-6c22-4c3c-abdf-b9a4ec2de515" class="bulleted-list"><li style="list-style-type:disc">Answer: RWD is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes.</li></ul><p id="c1270ed7-70a4-44fc-8d6b-7b9ab3b824e1" class="">
+</p></li></ol><ol type="1" id="57d69ad4-354a-427a-9d6a-bbb1a2822894" class="numbered-list" start="32"><li><strong>Question: Explain the techniques used in Responsive Web Design.</strong><ul id="b62d5dd0-6605-4241-a83f-fbcc56175bdc" class="bulleted-list"><li style="list-style-type:disc">Answer: Techniques include fluid layouts, fluid images, and media queries to adapt the content based on the device&#x27;s characteristics.</li></ul><p id="0ebb3003-2a4f-410e-8600-a743363dbeca" class="">
+</p></li></ol><ol type="1" id="df662bc9-fa16-4aff-9a89-5b51cc10a25f" class="numbered-list" start="33"><li><strong>Question: What is a fluid layout in the context of Responsive Design?</strong><ul id="358e760f-0e7e-4a51-addf-cde835dcd8cc" class="bulleted-list"><li style="list-style-type:disc">Answer: A fluid layout adjusts its dimensions proportionally to the user&#x27;s device, ensuring a consistent user experience across different screens.</li></ul><p id="1fc7c0ce-d21f-47ef-8e8e-965b8400328d" class="">
+</p></li></ol><ol type="1" id="d9b8a229-aaa0-4ae6-a093-c6c21712323b" class="numbered-list" start="34"><li><strong>Question: How do media queries contribute to Responsive Web Design?</strong><ul id="3fcecb79-433c-4d4f-9927-a1ce7717bad9" class="bulleted-list"><li style="list-style-type:disc">Answer: Media queries enable the adaptation of styles based on device characteristics like screen width, height, or resolution.</li></ul><p id="9f052097-a897-4227-9aac-7e0c0a5a94cc" class="">
+</p></li></ol><ol type="1" id="7e2aa010-3aa3-42bd-a89a-2cb20aebe230" class="numbered-list" start="35"><li><strong>Question: Introduce the concept of a Responsive Web Design framework.</strong><ul id="fc1abe52-86a5-41b7-8cbb-0cd31113865a" class="bulleted-list"><li style="list-style-type:disc">Answer: A Responsive Web Design framework, like Twitter Bootstrap, provides a set of tools and resources for building responsive websites efficiently.</li></ul><p id="033a13c7-7f96-4cce-a96a-c16cd88d20e7" class="">
+</p></li></ol><ol type="1" id="17af7f7d-f0a0-4282-a2da-44688bf7f481" class="numbered-list" start="36"><li><strong>Question: What is Twitter Bootstrap, and what are its key features?</strong><ul id="c7c152cb-a0bc-4f1d-91f9-ac09566c2975" class="bulleted-list"><li style="list-style-type:disc">Answer: Twitter Bootstrap is a popular front-end framework with features like a responsive grid system, pre-designed components, and built-in CSS and JavaScript.</li></ul><p id="d8da306f-5821-437c-adfb-f58f046577ac" class="">
+</p></li></ol><ol type="1" id="d4d209dc-e3de-49ef-809e-c4b1107a5818" class="numbered-list" start="37"><li><strong>Question: How can you get started with Bootstrap in a web project?</strong><ul id="f104a870-7ea8-4d67-a689-a11be0657448" class="bulleted-list"><li style="list-style-type:disc">Answer: You can start using Bootstrap by including its CSS and JS files in your HTML document or by using a CDN (Content Delivery Network).</li></ul><p id="9838d5b3-282b-4c2f-9778-d2f6fbc2b13d" class="">
+</p></li></ol><ol type="1" id="eaa73e9f-0c38-46a7-a578-5744b284ee75" class="numbered-list" start="38"><li><strong>Question: Demystify the concept of grids in Bootstrap.</strong><ul id="60488a73-48bd-4fb1-b246-948fdb905965" class="bulleted-list"><li style="list-style-type:disc">Answer: Bootstrap grids are a system of rows and columns that help organize and structure the layout of a webpage, ensuring responsiveness.</li></ul><p id="fc19474d-729f-47f5-87c7-052a598255ce" class="">
+</p></li></ol><ol type="1" id="08914b5e-de5a-4ed3-9cab-0c96231ae37e" class="numbered-list" start="39"><li><strong>Question: What are some commonly used Bootstrap components?</strong><ul id="99e3c514-4d7e-450e-8525-d2c9070cfa57" class="bulleted-list"><li style="list-style-type:disc">Answer: Bootstrap components include navigation bars, buttons, forms, modals, and various UI elements that can be easily integrated into web projects.</li></ul><p id="3a959349-53eb-430c-b0aa-4e7aa6599644" class="">
+</p></li></ol><ol type="1" id="3e840f0a-5ef7-4fe8-b912-426f6c882c29" class="numbered-list" start="40"><li><strong>Question: Explain the role of JS plugins in Bootstrap.</strong><ul id="5b503dc1-565a-47e6-a6e5-18da2f7e58ff" class="bulleted-list"><li style="list-style-type:disc">Answer: Bootstrap JS plugins enhance the functionality of components, providing interactive features like carousels, tooltips, and popovers.</li></ul><p id="5eb4d69c-ebb3-4f23-9559-fec58e1ed737" class="">
+</p></li></ol><ol type="1" id="4c5fed7e-419c-495d-871f-51a022bad9c1" class="numbered-list" start="41"><li><strong>Question: How can you customize the appearance of Bootstrap components?</strong><ul id="6872a5a1-b09f-4761-8189-eecb3b80ed4a" class="bulleted-list"><li style="list-style-type:disc">Answer: Bootstrap allows customization through CSS overrides or by using the Bootstrap customizer tool to generate a personalized version of the framework.</li></ul></li></ol><p id="1d1c5328-31f5-4db7-b458-0d508a1c3df5" class="">
+</p><hr id="0a472b6b-3c20-4ddb-89f9-3dd5cd0e73ee"/><p id="8942b508-b0ad-4fa4-8eb7-60e710a245fb" class="">
+</p><ol type="1" id="4e72c934-a0c7-42d2-a9fa-3b168ff51788" class="numbered-list" start="42"><li><strong>Question: What is the purpose of the Document Object Model (DOM) in web development?</strong><ul id="70a3bb7c-8ef4-41f3-bbe3-c8fb2f461863" class="bulleted-list"><li style="list-style-type:disc">Answer: The DOM represents the structure of a document as a tree of objects, enabling dynamic modification of a web page&#x27;s content and structure.</li></ul><p id="972f743d-431d-4ea3-9d41-3a07b3c12360" class="">
+</p></li></ol><ol type="1" id="f4cd0adf-c40f-4a42-bba6-3d5fd0a963ca" class="numbered-list" start="43"><li><strong>Question: Explain the significance of event handling in JavaScript.</strong><ul id="f9a8ad57-465c-48c1-9ce7-372f31a27bde" class="bulleted-list"><li style="list-style-type:disc">Answer: Event handling allows developers to respond to user interactions, such as clicks or keyboard input, creating dynamic and interactive web pages.</li></ul><p id="4a353530-5d2a-4bd2-a8f8-6bb871d0f987" class="">
+</p></li></ol><ol type="1" id="f64689a5-3113-4513-84f7-4ab686d96f3f" class="numbered-list" start="44"><li><strong>Question: How do you declare variables in JavaScript, and what are their data types?</strong><ul id="6f5524d4-9ff3-4f35-bd52-8ce04f326d5e" class="bulleted-list"><li style="list-style-type:disc">Answer: Variables are declared using &quot;var,&quot; &quot;let,&quot; or &quot;const.&quot; Data types include numbers, strings, booleans, objects, arrays, and more.</li></ul><p id="d9a87ae8-b746-4b95-9fe4-27d0c9e4afca" class="">
+</p></li></ol><ol type="1" id="e0ef76a2-a6a8-4b6d-9843-f130912e02ae" class="numbered-list" start="45"><li><strong>Question: What is the role of functions in JavaScript, and how is the scope of a variable defined?</strong><ul id="fd03aab4-8bf1-4030-9e24-0979bb11e8d4" class="bulleted-list"><li style="list-style-type:disc">Answer: Functions are reusable blocks of code. Variable scope in JavaScript can be either global or local, determined by where the variable is declared.</li></ul><p id="84c937a3-aec8-41ba-92b4-332bc602aca9" class="">
+</p></li></ol><ol type="1" id="6f3c3a38-a870-4ac7-af1f-82d165a55116" class="numbered-list" start="46"><li><strong>Question: How are objects used in JavaScript, and what is their significance?</strong><ul id="85d41885-e896-4bee-b880-327265d9f82f" class="bulleted-list"><li style="list-style-type:disc">Answer: Objects are collections of key-value pairs. They allow the organization and manipulation of related data and functionality in a structured manner.</li></ul><p id="c962829e-3309-4b0b-941e-89e34d16ebc1" class="">
+</p></li></ol><ol type="1" id="1a313ab4-9673-454f-b30d-2b22dec70be6" class="numbered-list" start="47"><li><strong>Question: Explain the purpose of the Document Object Model (DOM) in web development.</strong><ul id="8ed7857d-fb70-470e-b724-26e5eecf08f5" class="bulleted-list"><li style="list-style-type:disc">Answer: The DOM represents the structure of a document as a tree of objects, enabling dynamic modification of a web page&#x27;s content and structure.</li></ul><p id="79f123e8-119d-4f92-982e-fb48970a5afa" class="">
+</p></li></ol><ol type="1" id="05f41d17-758f-4fc9-a84c-88ac5e8cfa90" class="numbered-list" start="48"><li><strong>Question: What is the importance of form handling and validations in web development?</strong><ul id="e5309f82-12e3-4779-82f5-a3f34a5111a3" class="bulleted-list"><li style="list-style-type:disc">Answer: Form handling allows the collection of user input, while validations ensure that the input conforms to specified criteria, enhancing data integrity.</li></ul><p id="05abee46-bbd8-428d-8da0-857619b710de" class="">
+</p></li></ol><ol type="1" id="816462a2-78fa-4a30-887e-d1becd1f90b4" class="numbered-list" start="49"><li><strong>Question: Introduce jQuery and its role in simplifying JavaScript code.</strong><ul id="b6f89f72-5601-45bc-a544-6e058a1abfb5" class="bulleted-list"><li style="list-style-type:disc">Answer: jQuery is a fast and concise JavaScript library that simplifies tasks like DOM manipulation, event handling, and AJAX, providing a more efficient coding experience.</li></ul><p id="82cb18f7-3ca4-4a4b-b615-56427611bcc9" class="">
+</p></li></ol><ol type="1" id="00aaf6d2-89d6-4f43-ad4e-e3f50adee89c" class="numbered-list" start="50"><li><strong>Question: How are jQuery selectors used, and what is their purpose?</strong><ul id="a87de304-cdc4-4697-a441-7f40a9aa36e8" class="bulleted-list"><li style="list-style-type:disc">Answer: jQuery selectors simplify DOM element selection. They allow developers to target and manipulate specific elements on a webpage easily.</li></ul><p id="ae70e256-41c7-4ac2-9686-aa2df9985888" class="">
+</p></li></ol><ol type="1" id="8c18a955-424c-4cc7-ac07-ec5d7f1d5475" class="numbered-list" start="51"><li><strong>Question: Explain the concept of jQuery animations and their application in web development.</strong><ul id="88c5fca0-331a-4944-9b04-787fcfa430d8" class="bulleted-list"><li style="list-style-type:disc">Answer: jQuery animations provide smooth transitions and effects to web elements, enhancing the user experience by adding dynamic visual elements to a webpage.</li></ul><p id="9586ce48-9351-4612-a963-a4ca759c1f8f" class="">
+</p></li></ol><ol type="1" id="5a3a1290-35aa-4236-9326-1bb3a64e852b" class="numbered-list" start="52"><li><strong>Question: What is the significance of jQuery AJAX in web development?</strong><ul id="7bb3d85e-e1dc-4104-a45e-8c4f97657528" class="bulleted-list"><li style="list-style-type:disc">Answer: jQuery AJAX simplifies asynchronous communication with a server, enabling the retrieval and submission of data without requiring a page refresh.</li></ul><p id="df1f9e80-40f5-4f3d-a8f6-8152617392f9" class="">
+</p></li></ol><ol type="1" id="6d5eb3e1-d52a-4ef9-b4b9-34de6f62685c" class="numbered-list" start="53"><li><strong>Question: How does jQuery handle DOM traversal and manipulation?</strong><ul id="f605b4bd-c324-4672-837a-1c21d540161a" class="bulleted-list"><li style="list-style-type:disc">Answer: jQuery provides methods for easily traversing and manipulating the DOM, allowing developers to efficiently modify the content and structure of a webpage.</li></ul></li></ol><p id="97173f7f-0f57-4084-bdbe-985ea62cdf63" class="">
+</p><hr id="5e2cbb65-b380-43da-88bb-04584f85961d"/><p id="32342709-80b7-49a9-97cb-445f8c707cdb" class="">
+</p><ol type="1" id="a79dc3ab-f875-486b-a5de-8bcea9a01d47" class="numbered-list" start="54"><li><strong>Question: What is PHP, and how does it differ from other programming languages?</strong><ul id="a5442fba-d9a7-4dba-a1a0-188d6d4692fa" class="bulleted-list"><li style="list-style-type:disc">Answer: PHP is a server-side scripting language used for web development. It is embedded in HTML and excels at generating dynamic content.</li></ul><p id="fdaee4df-5185-4e2e-869c-761a0d8c082d" class="">
+</p></li></ol><ol type="1" id="b9113bc3-f9c5-4df8-923c-53f99710b0f0" class="numbered-list" start="55"><li><strong>Question: Explain the syntax of PHP.</strong><ul id="91f08fad-2163-45f0-86a0-4407bdfbcb82" class="bulleted-list"><li style="list-style-type:disc">Answer: PHP code is enclosed in &lt;?php ... ?&gt; tags. It can be embedded within HTML or standalone in a .php file.</li></ul><p id="078234a4-fedd-48fe-8fe9-aee6385b02c5" class="">
+</p></li></ol><ol type="1" id="7c101ecb-ae61-42a6-80b1-5c58d1c2a3ae" class="numbered-list" start="56"><li><strong>Question: Why is whitespace important in PHP, and how does it affect code execution?</strong><ul id="221f4cb4-2552-403e-8f68-c3934c02fded" class="bulleted-list"><li style="list-style-type:disc">Answer: Whitespace is generally ignored in PHP, but it enhances code readability. However, excessive whitespace may impact page load times.</li></ul><p id="76d93779-ee17-4ef1-960d-68fb3c75e667" class="">
+</p></li></ol><ol type="1" id="24441a71-4c3b-402e-8c73-113f46c6b0cf" class="numbered-list" start="57"><li><strong>Question: Discuss the use of comments in PHP and their significance.</strong><ul id="da71104a-bf3e-4642-b9f3-63f40deba5f1" class="bulleted-list"><li style="list-style-type:disc">Answer: Comments provide explanatory notes in the code. In PHP, comments can be single-line (//) or multi-line (/* ... */).</li></ul><p id="8f45d9ee-b726-4373-ad8d-a4c68d7f66ae" class="">
+</p></li></ol><ol type="1" id="e879186b-93b3-4586-8025-c94c8b1a1e70" class="numbered-list" start="58"><li><strong>Question: What are operators in PHP, and how are they used?</strong><ul id="6b34ba1f-9891-4884-88fa-0ee7cc56c64f" class="bulleted-list"><li style="list-style-type:disc">Answer: Operators perform operations on variables and values. Examples include arithmetic (+, -), comparison (==, !=), and logical (&amp;&amp;, ||) operators.</li></ul><p id="af659de9-60f3-42ab-a15b-cb2c19c74154" class="">
+</p></li></ol><ol type="1" id="6afacc24-ae20-40e5-b573-528b835f5432" class="numbered-list" start="59"><li><strong>Question: Explain the purpose of conditional statements in PHP.</strong><ul id="1a12716b-9d73-4b12-8f42-c85515627c2c" class="bulleted-list"><li style="list-style-type:disc">Answer: Conditional statements, such as if, else, and switch, allow the execution of different code blocks based on specified conditions.</li></ul><p id="76f18d25-3d56-4deb-917c-b585feda7d07" class="">
+</p></li></ol><ol type="1" id="e50a397a-04e1-4aca-b572-545eebd774c6" class="numbered-list" start="60"><li><strong>Question: How do looping statements like for and while contribute to PHP code execution?</strong><ul id="02def6e5-b59f-4090-aea8-523fa7bab540" class="bulleted-list"><li style="list-style-type:disc">Answer: Looping statements enable the repeated execution of code blocks. For loops have a predefined number of iterations, while loops continue until a condition is met.</li></ul><p id="5d2dd878-b5b0-4341-970b-d988290dc423" class="">
+</p></li></ol><ol type="1" id="34ed90e9-9b1b-401b-aec3-9b728a4920ce" class="numbered-list" start="61"><li><strong>Question: What is the significance of user-defined functions in PHP?</strong><ul id="b5907a9f-8d96-4a83-a3bd-baf829dd3461" class="bulleted-list"><li style="list-style-type:disc">Answer: User-defined functions encapsulate reusable blocks of code, promoting modularity and code maintainability in PHP applications.</li></ul><p id="d4d14d90-6798-4f09-9285-7f7c83d5fc5d" class="">
+</p></li></ol><ol type="1" id="6fccc512-d355-4192-a365-041f9391ceeb" class="numbered-list" start="62"><li><strong>Question: How are arrays used in PHP, and what types of arrays are supported?</strong><ul id="5ed9f025-7982-49fd-9bdd-3a751ba163f7" class="bulleted-list"><li style="list-style-type:disc">Answer: Arrays store multiple values under a single variable name. PHP supports indexed, associative, and multidimensional arrays.</li></ul><p id="968d9e1e-197b-4f33-8c45-1cb2cf7c2342" class="">
+</p></li></ol><ol type="1" id="afaf29c6-c38f-406c-a1bb-07482249747b" class="numbered-list" start="63"><li><strong>Question: Explain the difference between the GET and POST methods in PHP.</strong><ul id="819c4544-8096-4001-8933-c793a2813351" class="bulleted-list"><li style="list-style-type:disc">Answer: Both are used to send data to the server, but GET appends data to the URL, while POST sends data in the request body. POST is more secure for sensitive information.</li></ul><p id="d263a0cf-984f-42e4-9617-0d80107516e5" class="">
+</p></li></ol><ol type="1" id="1cf0df6e-4a53-4dbd-a601-13eb30ca1d89" class="numbered-list" start="64"><li><strong>Question: What are some common built-in functions in PHP for strings, math, date, and file handling?</strong><ul id="adb767ed-db2d-42b0-a261-4710296252e5" class="bulleted-list"><li style="list-style-type:disc">Answer: String functions include strlen(), math functions like sqrt(), date functions like date(), and file handling functions like fopen().</li></ul><p id="9be44645-c6ba-4c23-b734-387bf9cc6559" class="">
+</p></li></ol><ol type="1" id="1f75d251-13f8-436c-833a-814bd98b20da" class="numbered-list" start="65"><li><strong>Question: How can you send an email using PHP?</strong><ul id="e3ee0d14-b905-4b29-bfec-ea8be3e1683e" class="bulleted-list"><li style="list-style-type:disc">Answer: PHP&#x27;s mail() function is used to send email. It requires specifying the recipient, subject, message, and optional headers.</li></ul><p id="dc4474b4-35c9-4f82-a078-bed98e93c7b3" class="">
+</p></li></ol><ol type="1" id="d629ca12-d82d-4570-b7a0-7b222ff3fc93" class="numbered-list" start="66"><li><strong>Question: What steps are involved in uploading a file using PHP?</strong><ul id="e2204839-9405-4fc0-96d8-f60a9cf9afe7" class="bulleted-list"><li style="list-style-type:disc">Answer: Use a form with the enctype attribute set to &quot;multipart/form-data,&quot; then handle the uploaded file using PHP&#x27;s $_FILES array.</li></ul></li></ol><p id="826c0645-4905-4fd6-be8f-bd540599b04a" class="">
+</p><hr id="c2dcdad6-235f-4523-aaf5-451ba8430784"/><p id="f29aaab7-e7bc-4bd4-a0e4-6858aaddc79c" class="">
+</p><ol type="1" id="38f4db80-1d12-4449-88cb-8cf229ce9d0c" class="numbered-list" start="67"><li><strong>Question: What is the GD Library, and how is it used in PHP?</strong><ul id="f6dcb73e-6ca5-4971-b0d6-11ff5f3eb4aa" class="bulleted-list"><li style="list-style-type:disc">Answer: The GD Library is a graphics library for dynamically manipulating images in PHP. It&#x27;s used for tasks like creating thumbnails and adding watermarks.</li></ul><p id="86de33ae-98bb-494f-ae74-fb48a02414f8" class="">
+</p></li></ol><ol type="1" id="1d3f546c-f9b2-49ae-89ec-1c1c4576f073" class="numbered-list" start="68"><li><strong>Question: How do you create a cookie in PHP, and what is its purpose?</strong><ul id="100a3b97-ee0e-42d1-9b27-c76f535f3d78" class="bulleted-list"><li style="list-style-type:disc">Answer: Cookies are created using the setcookie() function. They store information on the user&#x27;s device, allowing persistent data across multiple requests.</li></ul><p id="dccd3964-cc85-4b3b-882c-648d234d527a" class="">
+</p></li></ol><ol type="1" id="b442efc1-91c9-4f68-a0b1-113f99b41d77" class="numbered-list" start="69"><li><strong>Question: Explain the role of sessions in PHP.</strong><ul id="1ca441e8-fa2a-4086-9e02-4b2d00df8cfc" class="bulleted-list"><li style="list-style-type:disc">Answer: Sessions maintain state information across multiple requests. PHP uses a unique session identifier to link a user&#x27;s data between pages.</li></ul><p id="1e83348e-b9aa-4a33-984e-c03a87cb6cb1" class="">
+</p></li></ol><ol type="1" id="4af69fd9-cdb3-48fe-a854-068c4488d880" class="numbered-list" start="70"><li><strong>Question: What are server variables in PHP, and how are they accessed?</strong><ul id="f68a0a33-d9ab-4fd5-a8bb-01a89c61c8a4" class="bulleted-list"><li style="list-style-type:disc">Answer: Server variables, like $_SERVER[&#x27;HTTP_USER_AGENT&#x27;], contain information about the server environment. They are accessed using the global $_SERVER array.</li></ul><p id="7fa7fe0c-44be-41e0-9be2-73f2ece69380" class="">
+</p></li></ol><ol type="1" id="660f3c57-6fbb-4c0e-a5cb-a74fa184169d" class="numbered-list" start="71"><li><strong>Question: How do you establish database connectivity with MySQL in PHP?</strong><ul id="8c02294e-f694-4183-b381-ecb0dc1a8182" class="bulleted-list"><li style="list-style-type:disc">Answer: Database connectivity is achieved using functions like mysqli_connect(). Provide the database host, username, password, and database name as parameters.</li></ul><p id="9452e937-f600-4932-bc97-98b945cb84a9" class="">
+</p></li></ol><ol type="1" id="d3a7a151-6045-4ebf-a879-03e1953381fe" class="numbered-list" start="72"><li><strong>Question: Explain the significance of regular expressions in PHP.</strong><ul id="63ee2989-4c79-4b87-a7ec-a3771f64adcf" class="bulleted-list"><li style="list-style-type:disc">Answer: Regular expressions (regex) are powerful tools for pattern matching and string manipulation. They are used for tasks like validation and data extraction.</li></ul><p id="8db0241c-7309-47b3-8e96-fdedac1a8074" class="">
+</p><hr id="1a1e6d25-7b98-409f-bb2c-4e61ebe8f203"/><p id="66c219bc-4794-4e9d-a124-ae06bf088a05" class="">
+</p></li></ol><ol type="1" id="42631e6d-f9a6-4c35-b426-b960e64c9d7b" class="numbered-list" start="73"><li><strong>Question: What is a class in PHP, and how is it used in object-oriented programming?</strong><ul id="ee9cbdd4-c0ba-452f-afbb-20fe21ba5607" class="bulleted-list"><li style="list-style-type:disc">Answer: A class is a blueprint for creating objects in PHP. It defines properties and methods that can be shared by multiple instances.</li></ul><p id="c4723b1b-90d7-410b-9aea-0c1b88a96943" class="">
+</p></li></ol><ol type="1" id="01803614-0d6c-4aa1-a0fe-a88c016b4825" class="numbered-list" start="74"><li><strong>Question: Explain the concept of an object in PHP.</strong><ul id="55e38e72-c9d2-46fa-91b3-c8226efa189b" class="bulleted-list"><li style="list-style-type:disc">Answer: An object is an instance of a class in PHP. It encapsulates data (properties) and behavior (methods) related to a specific entity.</li></ul><p id="b60b6f7e-5c8e-483b-949e-5d9c8422754f" class="">
+</p></li></ol><ol type="1" id="bf80567c-ce54-45a5-93db-1ece9db9c028" class="numbered-list" start="75"><li><strong>Question: What is a constructor, and why is it used in PHP classes?</strong><ul id="010767c1-bf96-4e7a-b777-23cfc4af4989" class="bulleted-list"><li style="list-style-type:disc">Answer: A constructor is a special method in a PHP class that is automatically called when an object is instantiated. It is used for initializing object properties.</li></ul><p id="7fcc69b2-96d6-4314-8fdd-6c781fad8cd7" class="">
+</p></li></ol><ol type="1" id="d720310c-9d5b-4b03-8d81-651327d0c21c" class="numbered-list" start="76"><li><strong>Question: Discuss the concept of inheritance in object-oriented programming with PHP.</strong><ul id="69d04a2b-9543-4645-8e84-8a10b72c7712" class="bulleted-list"><li style="list-style-type:disc">Answer: Inheritance allows a class to inherit properties and methods from another class. It promotes code reuse and supports the creation of a hierarchy of classes.</li></ul><p id="1e90dfbb-8481-4f2a-a17c-1f423c37beee" class="">
+</p></li></ol><ol type="1" id="82968d31-d0a0-49fb-8991-180b529310c0" class="numbered-list" start="77"><li><strong>Question: What is the purpose of an interface in PHP?</strong><ul id="01facc0b-b00f-42de-87ae-df82a8d30473" class="bulleted-list"><li style="list-style-type:disc">Answer: An interface defines a contract for classes, specifying a set of methods that must be implemented. It provides a way to achieve abstraction and multiple inheritance.</li></ul><p id="7a72b8c0-5550-44af-a75e-79ff8c9b634b" class="">
+</p></li></ol><ol type="1" id="1f0771b9-8d15-4f3f-9511-5a08af034f4c" class="numbered-list" start="78"><li><strong>Question: Introduce AJAX and its role in web development.</strong><ul id="420cbd34-92fc-4b23-80c0-68249a410301" class="bulleted-list"><li style="list-style-type:disc">Answer: AJAX (Asynchronous JavaScript and XML) is a technology that allows web pages to be updated asynchronously by exchanging small amounts of data with the server, without reloading the entire page.</li></ul><p id="384f7e8c-876c-436c-801d-0effb93dc152" class="">
+</p></li></ol><ol type="1" id="b1b88d39-7851-49b8-969f-b3dcfd78eb66" class="numbered-list" start="79"><li><strong>Question: How is AJAX implemented in PHP web applications?</strong><ul id="211263c2-d526-4456-8b88-a3e1ad32eda8" class="bulleted-list"><li style="list-style-type:disc">Answer: AJAX is implemented using JavaScript to make asynchronous requests to a PHP server, which processes the request and sends back the response. This enables dynamic and interactive user experiences.</li></ul><p id="c9a86d5c-8a06-4395-b34e-adb65e9a8837" class="">
+</p></li></ol><ol type="1" id="048c6252-bb03-4473-b122-4a04db16204b" class="numbered-list" start="80"><li><strong>Question: Explain the working of AJAX with a MySQL database in PHP.</strong><ul id="b8bd78e8-38f3-49d7-bb7e-be67a01e7226" class="bulleted-list"><li style="list-style-type:disc">Answer: AJAX can be used to send requests to a PHP script that interacts with a MySQL database. Data is retrieved or updated without refreshing the entire page, providing a seamless user experience.</li></ul></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
